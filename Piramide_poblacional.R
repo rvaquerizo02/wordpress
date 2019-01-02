@@ -52,7 +52,7 @@ saveGIF(
     mujeres <- as.vector(unlist(mujeres$Mujeres))
     mujeres <- (mujeres/sum(mujeres)) *100
     
-    par(mar=pyramid.plot( hombres, mujeres, labels=agelabels,lxcol=mcol,rxcol=fcol,show.values=TRUE))
+    par(mar=pyramid.plot( hombres, mujeres, labels=agelabels,lxcol=mcol,rxcol=fcol,show.values=TRUE, xlim=c(12,12)))
     title(paste0("Pirámide poblacional de España año ",year),cex.sub=1.7)
   },
   interval=1,

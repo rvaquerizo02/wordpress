@@ -1,0 +1,25 @@
+---
+title: "Modelos de poisson con Python/R"
+output: html_notebook
+---
+
+```{r message=FALSE, warning=FALSE}
+library(CASdatasets)
+library(mgcv)
+```
+
+```{r}
+data(pg15training)
+pg15training <- pg15training %>% mutate(Exp = Exppdays/365)
+sum(pg15training$Numtppd)/sum(pg15training$Exp)
+```
+```{r}
+gam1 <- gam(pg15training, Numtppd ~ CalYear + s(Age, by= CalYear, m=1))
+```
+
+```{r}
+data(pg15training)
+gam2 <- gam(y ~ fac +s(x) +s(x, by = fac, m=1), ...)
+gam1 <- gam()
+```
+

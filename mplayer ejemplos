@@ -1,0 +1,56 @@
+* Instalar youtube-dl 
+pip install -U youtube-dl
+
+* Ubicación de trabajo
+cd ./Escritorio/wordpress 
+
+* Listar formatos 
+youtube-dl --list-formats https://www.youtube.com/watch?v=fhQPB8GHtqo
+
+* Descargar 
+youtube-dl -f 136 https://www.youtube.com/watch?v=fhQPB8GHtqo
+
+* ejemplo de descarga de alacarta
+youtube-dl --list-formats  https://www.rtve.es/alacarta/videos/motociclismo/jorge-prado-campeon-del-mundo-motocross/4758017/
+youtube-dl -f hls-1672 https://www.rtve.es/alacarta/videos/motociclismo/jorge-prado-campeon-del-mundo-motocross/4758017/
+
+youtube-dl -f https://www.ivoox.com/sintetizadores-antiguos-atmosfera_md_309122_1.mp3 
+
+* Renombramos
+mv "GoPro Lap of El Molar with Jorge Prado & Timor Petrashin-fhQPB8GHtqo.mp4" video1.mp4
+
+mplayer -vf framestep=10 -framedrop -nosound video1.mp4 -speed 100 -vo jpeg:outdir=video1
+
+mplayer -vf scale -sstep 30 -frames 20 y -framedrop -nosound video1.mp4  -speed 100 -vo jpeg:outdir=video2
+
+
+
+mplayer -vf format=y8, scale -sstep 30 -frames 20 y scale=320:240 -framedrop -nosound video1.mp4  -speed 100 -vo jpeg:outdir=prueba1
+
+cat * > union.txt
+sed -i '1s/^/<added text> /‘ file
+
+for file in *.txt; do sed -i 'Lectura' "$file" &&echo 'Some other
+string' >> "$file” done
+
+for i in 'find . -name “*.txt" ' ; do echo $i.txt > $i.txt ; cat < $i >>
+$i.txt ; done
+
+for i in 'ls *.txt'  ; do echo "${i:0:5}"; done
+
+  for i in 'ls *.txt';do  j="${i%.*}"; j="${j##*.}";  echo "${j:0:5}";
+done
+
+for file in *.tif.txt ; echo "${file:0:8}" ; done
+
+for i in 'ls *.tif.txt ' ; do echo  $i.txt > $i.txt ; cat < $i >> $i.txt
+; done
+  for file in *.txt  ; do sed -i '1i Some string' "$file"; done
+
+for file in 'ls *.tif.txt ' ; do sed -i '1i Some string' $file ; done
+
+for file in *.txt ; do sed -i '1i Some string' "$file" ; done
+
+
+
+
